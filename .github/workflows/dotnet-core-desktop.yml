@@ -82,7 +82,7 @@ jobs:
 
     # Execute all unit tests in the solution
     - name: Execute unit tests
-      run:  nuget.exe org.wso2.identity.sdk.oidc.sln
+      run:  nuget.exe restore org.wso2.identity.sdk.oidc.sln
 
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     - name: Restore the application

@@ -69,6 +69,12 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.101
+        
+        
+    - name: Setup NuGet.exe for use with actions
+      # You may pin to the exact commit or the version.
+      # uses: NuGet/setup-nuget@255f46e14d51fbc603743e2aa2907954463fbeb9
+      uses: NuGet/setup-nuget@v1.0.2
 
     # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
     - name: Setup MSBuild.exe
@@ -76,9 +82,9 @@ jobs:
 
     # Execute all unit tests in the solution
     - name: Execute unit tests
-      run: dotnet restore
+      run:  nuget.exe org.wso2.identity.sdk.oidc.sln
 
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     - name: Restore the application
-      run: dotnet build -c Release
+      run:  MsBuild.exe org.wso2.identity.sdk.oidc.sln /t:Rebuild /p:Configuration=Release
 

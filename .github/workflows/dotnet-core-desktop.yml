@@ -69,7 +69,7 @@ jobs:
           (New-Object System.Net.WebClient).DownloadFile("https://github.com/wixtoolset/wix3/releases/download/wix3112rtm/wix311-binaries.zip","wix311-binaries.zip")
           Expand-Archive .\wix311-binaries.zip .\wix311-binaries
           ls
-          echo "$PWD\wix311-binaries" >> $GITHUB_PATH
+          echo "::add-path::./wix311-binaries"
         
     - name: Wix test
       run:  candle.exe --version

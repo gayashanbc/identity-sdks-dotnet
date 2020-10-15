@@ -68,10 +68,10 @@ jobs:
       run: |
         (New-Object System.Net.WebClient).DownloadFile("https://github.com/wixtoolset/wix3/releases/download/wix3112rtm/wix311-binaries.zip","wix311-binaries.zip");
         Expand-Archive .\wix311-binaries.zip .;
-        echo "::add-path::./wix311-binaries.zip"
+        echo "./wix311-binaries.zip" >> $GITHUB_PATH
         
     - name: Wix test
-      run:  candle --version
+      run:  candle.exe --version
       
     - name: Setup NuGet.exe for use with actions
       # You may pin to the exact commit or the version.

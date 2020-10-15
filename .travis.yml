@@ -3,8 +3,8 @@ mono: none
 dotnet: 3.1
 
 install:
-- dotnet restore
+- dotnet restore org.wso2.identity.sdk.oidc/org.wso2.identity.sdk.oidc.csproj
 
 script:
- - dotnet build
+ - dotnet build org.wso2.identity.sdk.oidc/org.wso2.identity.sdk.oidc.csproj
  

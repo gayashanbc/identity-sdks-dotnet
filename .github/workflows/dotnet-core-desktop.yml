@@ -72,9 +72,9 @@ jobs:
 #       # uses: NuGet/setup-nuget@255f46e14d51fbc603743e2aa2907954463fbeb9
 #       uses: NuGet/setup-nuget@v1.0.2
 
-    # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
-    - name: Setup MSBuild.exe
-      uses: microsoft/setup-msbuild@2008f912f56e61277eefaac6d1888b750582aa16
+#     # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
+#     - name: Setup MSBuild.exe
+#       uses: microsoft/setup-msbuild@2008f912f56e61277eefaac6d1888b750582aa16
 
 #     # Execute all unit tests in the solution
 #     - name: Execute unit tests
@@ -82,5 +82,5 @@ jobs:
 
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     - name: Restore the application
-      run:  Write-Host "$env:Solution_Name Configuration=$env:Configuration"
+      run:  Write-Host "$env:Solution_Name Configuration=$env:configuration"
 
